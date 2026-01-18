@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-str1 = "object"
+str = "object"
 str2 = "Python"
-print(f"{str1}-oriented programming with {str2}")
+print(f"{str}-oriented programming with {str2}")
 
