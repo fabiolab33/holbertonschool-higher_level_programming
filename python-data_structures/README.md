@@ -62,4 +62,4 @@ The goal of this project is to become familiar with **lists, tuples, and string 
 Each task contains a **main test file** (e.g., `0-main.py`) that demonstrates usage. Run a task with:
 
 ```bash
-python3 0-main.py
+./0-main.py
