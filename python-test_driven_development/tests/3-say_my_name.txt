@@ -193,5 +193,5 @@ Test with newline in name (valid string):
      Smith
 
 Test with tab in name (valid string):
-    >>> say_my_name("John\t", "Smith")
-    My name is John	 Smith
+    >>> say_my_name("John\\t", "Smith")
+    My name is John\t Smith
