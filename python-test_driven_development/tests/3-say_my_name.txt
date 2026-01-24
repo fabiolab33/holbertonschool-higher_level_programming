@@ -1,0 +1,197 @@
+===========================
+Test for 3-say_my_name.py
+===========================
+
+Import the function:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+===========================
+Test Cases: Normal Usage
+===========================
+
+Test with both first and last name:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+Test with another full name:
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+Test with only first name (last_name defaults to ""):
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+Test with empty string as last name:
+    >>> say_my_name("Alice", "")
+    My name is Alice 
+
+Test with long names:
+    >>> say_my_name("Christopher", "Montgomery")
+    My name is Christopher Montgomery
+
+Test with single character names:
+    >>> say_my_name("A", "B")
+    My name is A B
+
+Test with spaces in names:
+    >>> say_my_name("Mary Jane", "Watson")
+    My name is Mary Jane Watson
+
+Test with hyphenated names:
+    >>> say_my_name("Jean-Luc", "Picard")
+    My name is Jean-Luc Picard
+
+Test with names containing apostrophes:
+    >>> say_my_name("O'Brien", "Smith")
+    My name is O'Brien Smith
+
+Test with special characters:
+    >>> say_my_name("José", "García")
+    My name is José García
+
+===========================
+Test Cases: Type Errors - first_name
+===========================
+
+Test with integer as first_name:
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test with None as first_name:
+    >>> say_my_name(None, "White")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test with list as first_name:
+    >>> say_my_name(["John"], "Smith")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test with float as first_name:
+    >>> say_my_name(3.14, "Smith")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test with boolean as first_name:
+    >>> say_my_name(True, "Smith")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test with tuple as first_name:
+    >>> say_my_name(("John",), "Smith")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test with dict as first_name:
+    >>> say_my_name({"name": "John"}, "Smith")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+===========================
+Test Cases: Type Errors - last_name
+===========================
+
+Test with integer as last_name:
+    >>> say_my_name("John", 12)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test with None as last_name:
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test with list as last_name:
+    >>> say_my_name("John", ["Smith"])
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test with float as last_name:
+    >>> say_my_name("John", 3.14)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test with boolean as last_name:
+    >>> say_my_name("John", False)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test with tuple as last_name:
+    >>> say_my_name("John", ("Smith",))
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test with dict as last_name:
+    >>> say_my_name("John", {"last": "Smith"})
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+===========================
+Test Cases: Both Arguments Invalid
+===========================
+
+Test with both arguments as integers:
+    >>> say_my_name(12, 34)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test with both arguments as None:
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+===========================
+Test Cases: Missing Arguments
+===========================
+
+Test with no arguments:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+===========================
+Test Cases: Edge Cases
+===========================
+
+Test with empty string as first_name:
+    >>> say_my_name("", "Smith")
+    My name is  Smith
+
+Test with both names as empty strings:
+    >>> say_my_name("", "")
+    My name is  
+
+Test with numeric strings (valid strings):
+    >>> say_my_name("123", "456")
+    My name is 123 456
+
+Test with very long name:
+    >>> say_my_name("A" * 100, "B" * 100)
+    My name is AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Test with newline in name (valid string):
+    >>> say_my_name("John\n", "Smith")
+    My name is John
+     Smith
+
+Test with tab in name (valid string):
+    >>> say_my_name("John\t", "Smith")
+    My name is John	 Smith
