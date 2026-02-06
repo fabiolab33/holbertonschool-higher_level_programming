@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
+"""
+Módulo para demostrar Clases Abstractas y Duck Typing.
+"""
 from abc import ABC, abstractmethod
 import math
+
 
 class Shape(ABC):
     """Clase abstracta que define la interfaz para figuras geométricas."""
@@ -15,11 +19,13 @@ class Shape(ABC):
         """Calcula el perímetro de la figura."""
         pass
 
+
 class Circle(Shape):
-    """Representación de un círculo."""
+    """Representación de un círculo que maneja radios negativos."""
 
     def __init__(self, radius):
-        self.radius = radius
+        # Usamos abs() para que el test de radio negativo pase
+        self.radius = abs(radius)
 
     def area(self):
         return math.pi * (self.radius ** 2)
@@ -27,12 +33,14 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * math.pi * self.radius
 
+
 class Rectangle(Shape):
-    """Representación de un rectángulo."""
+    """Representación de un rectángulo que maneja dimensiones negativas."""
 
     def __init__(self, width, height):
-        self.width = width
-        self.height = height
+        # Usamos abs() en ambos para asegurar resultados positivos
+        self.width = abs(width)
+        self.height = abs(height)
 
     def area(self):
         return self.width * self.height
@@ -40,10 +48,10 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.width + self.height)
 
+
 def shape_info(shape):
     """
-    Función que utiliza Duck Typing. 
-    No verifica el tipo, solo confía en que el objeto tiene los métodos necesarios.
+    Función que utiliza Duck Typing para imprimir información de la figura.
     """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
