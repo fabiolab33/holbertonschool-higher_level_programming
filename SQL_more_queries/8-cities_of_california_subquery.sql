@@ -1,4 +1,3 @@
--- 8-cities_of_california_subquery.sql
 -- List all cities of California without using JOIN
 
 SELECT id, name

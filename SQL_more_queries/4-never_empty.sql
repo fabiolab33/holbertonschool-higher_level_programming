@@ -1,4 +1,3 @@
--- 4-never_empty.sql
 -- Create the table id_not_null with id default value 1
 -- Table should not fail if it already exists
 

@@ -1,4 +1,3 @@
--- 3-force_name.sql
 -- Create the table force_name with id INT and name VARCHAR(256) NOT NULL
 -- Table should not fail if it already exists
 

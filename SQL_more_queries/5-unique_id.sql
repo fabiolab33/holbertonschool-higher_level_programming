@@ -1,4 +1,3 @@
--- 5-unique_id.sql
 -- Create the table unique_id with id default value 1 and unique constraint
 -- Table should not fail if it already exists
 
