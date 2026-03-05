@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-0-select_states.py: Lists all states from the database hbtn_0e_0_usa
-Usage: ./0-select_states.py <mysql username> <mysql password> <database name>
+1-filter_states.py: Lists all states with a name starting with 'N'
+Usage: ./1-filter_states.py <mysql username> <mysql password> <database name>
 """
 
 import sys
@@ -10,21 +10,21 @@ pymysql.install_as_MySQLdb()
 import MySQLdb
 
 def main():
-    """Connects to MySQL and prints all states sorted by id."""
-    # Get arguments
+    """Connects to MySQL and prints states with names starting with 'N', sorted by id."""
+    # Get command-line arguments
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    # Connect to MySQL
+    # Connect to MySQL server
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=username, passwd=password, db=database)
 
-    # Create cursor
+    # Create a cursor
     cur = db.cursor()
 
-    # Execute query
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    # Execute query to filter states starting with 'N'
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
-    # Fetch all rows and print
+    # Fetch and print each row
     for row in cur.fetchall():
         print(row)
 
