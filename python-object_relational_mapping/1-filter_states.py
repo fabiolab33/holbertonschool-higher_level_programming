@@ -5,8 +5,6 @@ Usage: ./1-filter_states.py <mysql username> <mysql password> <database name>
 """
 
 import sys
-import pymysql
-pymysql.install_as_MySQLdb()
 import MySQLdb
 
 def main():
