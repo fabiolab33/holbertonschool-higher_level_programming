@@ -3,14 +3,6 @@
 ## Background Context
 In Python, "Everything is an object." This project explores how Python handles different types of objects, focusing on the concepts of **mutability**, **immutability**, and **object identity**. Understanding these concepts is crucial for avoiding unexpected behaviors when assigning variables or passing arguments to functions.
 
-## Resources
-* [9.10. Objects and values](https://hbtn.io)
-* [9.11. Aliasing](https://hbtn.io)
-* [Immutable vs mutable types](https://hbtn.io)
-* [Mutation](https://hbtn.io)
-* [9.12. Cloning lists](https://hbtn.io)
-* [Python tuples: immutable but potentially changing](https://hbtn.io)
-
 ## Learning Objectives
 By the end of this project, I am able to explain:
 * What is an object and the difference between a class and an instance.
@@ -20,11 +12,6 @@ By the end of this project, I am able to explain:
 * How to display a variable's identifier (memory address).
 * How Python passes variables to functions (Call by Object Reference).
 
-## Requirements
-* **OS:** Ubuntu 20.04 LTS
-* **Language:** Python 3.8.5
-* **Style:** `pycodestyle` (version 2.7.*)
-* **Editors:** vi, vim, emacs
 
 ## Task Overview
 
